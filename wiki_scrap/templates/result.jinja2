@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Index</title>
+</head>
+<body>
+	{% if error %}
+		{{error}}<br>
+		URL : {{url}}
+	{% endif %}
+
+	{% if data %}<h3>Contents</h3>{% endif %}
+
+	<table border="1px solid">
+		{% for value in data %}
+			<tr>
+				<td>{{value.number}}:</td>
+				<td><a href="{{url}}{{value.url}}" target="_blank">{{value.text}}</a></td>
+			</tr>
+		{% endfor %}
+	</table>
+	<br>
+	<a href="/"><button>Reset</button></a>
+	{% if data %}<a href="/download/"><button>Download csv</button></a>{% endif %}
+</body>
+</html>

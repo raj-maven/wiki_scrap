@@ -1,0 +1,3 @@
+[run]
+source = wiki_scrap
+omit = wiki_scrap/test*
