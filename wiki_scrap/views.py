@@ -18,7 +18,7 @@ sys.setdefaultencoding('utf-8')
 # Home view, available at http://127.0.0.1:6543
 @view_config(route_name='home', renderer='templates/index.jinja2')
 def home(request):
-    return dict()
+    return {'project': 'wiki_scrap'}
 
 # result view
 @view_config(route_name='result', renderer="templates/result.jinja2")
@@ -66,7 +66,9 @@ def result(request):
                 writer.writerow({'#': val['number'], 'Title': val['text'],
                                 'url': url+val['url']})
 
-    return dict(data=data, error=error, url=url)
+    	return dict(data=data, error=error, url=url)
+    else:
+    	return dict(error="Please enter the Url first.")
 
 
 # For downloading csv file 

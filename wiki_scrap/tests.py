@@ -3,27 +3,28 @@ import unittest
 from pyramid import testing
 
 
-class ViewTests(unittest.TestCase):
+class ViewHomeTests(unittest.TestCase):
     def setUp(self):
         self.config = testing.setUp()
 
     def tearDown(self):
         testing.tearDown()
 
-    def test_my_view(self):
-        from .views import my_view
+    def test_it(self):
+        from .views import home
         request = testing.DummyRequest()
-        info = my_view(request)
+        info = home(request)
         self.assertEqual(info['project'], 'wiki_scrap')
 
-
-class FunctionalTests(unittest.TestCase):
+class ViewResultTests(unittest.TestCase):
     def setUp(self):
-        from wiki_scrap import main
-        app = main({})
-        from webtest import TestApp
-        self.testapp = TestApp(app)
+        self.config = testing.setUp()
 
-    def test_root(self):
-        res = self.testapp.get('/', status=200)
-        self.assertTrue(b'Pyramid' in res.body)
+    def tearDown(self):
+        testing.tearDown()
+
+    def test_it(self):
+        from .views import result
+        request = testing.DummyRequest()
+        info = result(request)
+        self.assertEqual(info['error'], 'Please enter the Url first.')

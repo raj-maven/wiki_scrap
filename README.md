@@ -1,11 +1,24 @@
-wiki_scrap README
-==================
+wiki_scrap
+===========
+
+For Demo please visit http://wikiscrap.zealousys.com/.
+
+Developed by using Pyramid Framework.
+
 
 Getting Started
 ---------------
 
-- cd <directory containing this file>
+- git clone https://github.com/raj-zealous/wiki_scrap.git
 
-- $VENV/bin/pip install -e .
+- cd wiki_scrap 
 
-- $VENV/bin/pserve development.ini
+- pip install -e .
+
+- pserve development.ini
+
+For running test cases 
+
+- pip install -e ".[testing]"
+
+- py.test 
