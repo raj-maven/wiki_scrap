@@ -1,7 +1,7 @@
 wiki_scrap
 ===========
 
-For Demo please visit http://wikiscrap.zealousys.com/.
+For Demo please visit http://54.86.45.0:6543 .
 
 Developed by using Pyramid Framework.
 
@@ -9,7 +9,7 @@ Developed by using Pyramid Framework.
 Getting Started
 ---------------
 
-- git clone https://github.com/raj-zealous/wiki_scrap.git
+- git clone https://github.com/raj-maven/wiki_scrap.git
 
 - cd wiki_scrap 
 
